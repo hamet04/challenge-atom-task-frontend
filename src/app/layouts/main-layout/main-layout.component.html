@@ -1,0 +1,27 @@
+<div class="main-layout" [class.example-is-mobile]="isMobile()">
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1>Mi Aplicación</h1>
+    </mat-toolbar>
+    
+    <mat-sidenav-container>
+        <mat-sidenav class="sidenav" #snav [mode]="isMobile() ? 'over' : 'side'"
+                    [fixedInViewport]="isMobile()" fixedTopGap="56" opened>
+            <div class="mat-drawer-inner-sub-container"
+            [ngStyle]="{ height: isMobile() ? '100%' : '93%'}">
+                <mat-nav-list>
+                    @for (nav of fillerNav; track nav) {
+                        <a mat-list-item [routerLink]="nav.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{nav.name}}</a>
+                    }
+                </mat-nav-list>
+                <button mat-flat-button (click)="closeSession()" color="primary" class="m-1">Cerrar Sesión</button>
+            </div>
+        </mat-sidenav>
+    
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

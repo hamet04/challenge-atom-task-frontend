@@ -1,0 +1,67 @@
+html, body { margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+router-outlet {
+    display: block;
+    position: relative;
+}
+
+.modal-title{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+$rems: 0, 1, 2, 3, 4, 5;
+
+@each $i in $rems{
+    .p-#{$i}{
+        padding: $i+rem !important;
+    }
+    .py-#{$i} {
+        padding-top: $i+rem !important;
+        padding-bottom: $i+rem !important;
+    }
+    .pt-#{$i} {
+        padding-top: $i+rem !important;
+    }
+    .pb-#{$i} {
+        padding-bottom: $i+rem !important;
+    }
+    .px-#{$i} {
+        padding-left: $i+rem !important;
+        padding-right: $i+rem !important;
+    }
+    .pl-#{$i} {
+        padding-left: $i+rem !important;
+    }
+    .pr-#{$i} {
+        padding-right: $i+rem !important;
+    }
+    
+    .m-#{$i}{
+        margin: $i+rem !important;
+    }
+    .my-#{$i} {
+        margin-top: $i+rem !important;
+        margin-bottom: $i+rem !important;
+    }
+    .mt-#{$i} {
+        margin-top: $i+rem !important;
+    }
+    .mb-#{$i} {
+        margin-bottom: $i+rem !important;
+    }
+    .mx-#{$i} {
+        margin-left: $i+rem !important;
+        margin-right: $i+rem !important;
+    }
+    .ml-#{$i} {
+        margin-left: $i+rem !important;
+    }
+    .mr-#{$i} {
+        margin-right: $i+rem !important;
+    }
+}

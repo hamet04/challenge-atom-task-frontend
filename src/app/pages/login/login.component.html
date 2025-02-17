@@ -1,0 +1,23 @@
+<div class="container-login">
+  <h1>Iniciar Sesión</h1>
+  <div class="container-form-login">
+    <mat-form-field appearance="outline">
+      <mat-label>Correo Electrónico</mat-label>
+      <input 
+        matInput
+        [formControl]="email"
+        (input)="updateErrorMessage()"
+        required>
+        @if (email.invalid) {
+          <mat-error>{{errorMessage}}</mat-error>
+        }
+      <button
+        [disabled]="email.invalid"
+        mat-icon-button
+        matSuffix
+      >
+        <mat-icon (click)="login()">arrow_circle_right</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</div>

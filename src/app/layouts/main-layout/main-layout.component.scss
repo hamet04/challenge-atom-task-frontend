@@ -1,0 +1,19 @@
+.main-layout{
+    height: 100%;
+    .mat-drawer-container{
+        height: 100%;
+    }
+    .sidenav{
+        width: 250px;
+    }
+}
+.mat-drawer-inner-sub-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mat-mdc-nav-list .mat-mdc-list-item{
+    &.active{
+        background-color: #777fb152;
+    }
+}

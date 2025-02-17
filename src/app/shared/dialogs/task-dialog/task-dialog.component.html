@@ -1,0 +1,29 @@
+<div class="p-2">
+  <span mat-dialog-title class="modal-title">{{ data && data.id ? 'Actualizar' : 'Crear'}} Tarea</span>
+  <mat-dialog-content class="px-0 py-1">
+    <form [formGroup]="tareaForm">
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="Titulo" />
+        <mat-error *ngIf="tareaForm.get('Titulo')?.hasError('required')">
+          El título es requerido.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput formControlName="Descripcion"></textarea>
+        <mat-error *ngIf="tareaForm.get('Descripcion')?.hasError('maxlength')">
+          La descripción no puede superar los 200 caracteres.
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions class="p-0">
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="tareaForm.invalid">
+      Guardar
+    </button>
+  </mat-dialog-actions>
+</div>
