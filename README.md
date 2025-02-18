@@ -1,59 +1,55 @@
 # ChallangeTaskAtomFe
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+## Challange Task Atom Frontend
 
-## Development server
+## Tecnologías Utilizadas
 
-To start a local development server, run:
+Angular 16+: Framework para el desarrollo de aplicaciones frontend.
 
-```bash
-ng serve
-```
+RxJS: Programación reactiva y manejo de flujos asíncronos.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Zone.js: Gestión del contexto de ejecución.
 
-## Code scaffolding
+Angular Material: Conjunto de componentes UI con el diseño de Material Design.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Scripts Disponibles
 
-```bash
-ng generate component component-name
-```
+ng serve: Inicia el servidor de desarrollo en http://localhost:4200/.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+ng build: Compila la aplicación para producción en la carpeta dist/.
 
-```bash
-ng generate --help
-```
+ng test: Ejecuta las pruebas unitarias.
 
-## Building
+## Estructura del Proyecto
 
-To build the project run:
+src/
+ ├── app/
+ │    ├── core/
+ │    │    ├── animations/
+ │    │    ├── guards/
+ │    │    ├── models/
+ │    │    └── servicios/
+ │    ├── layouts/
+ │    └── app.component.ts
+ ├── index.html
+ ├── main.ts
+ └── styles.scss
 
-```bash
-ng build
-```
+## Decisiones de Diseño
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Modularización: Se utiliza una estructura modular para mantener el código organizado y facilitar su mantenibilidad.
 
-## Running unit tests
+Guardias de Autenticación: Se implementaron auth.guard.ts y notauth.guard.ts para gestionar el acceso a las rutas protegidas.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Servicios centralizados: Servicios como auth.service.ts y task.service.ts permiten una mejor reutilización del código.
 
-```bash
-ng test
-```
+## Notas Adicionales
 
-## Running end-to-end tests
+Se utilizaron interceptores para agregar el uid a las solicitudes HTTP.
 
-For end-to-end (e2e) testing, run:
+Las animaciones de navegación están centralizadas en navigation.service.ts.
 
-```bash
-ng e2e
-```
+## Link del Proyecto
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Puedes acceder a la aplicación en el siguiente enlace: [Challange Task Atom](https://listtaskchallenge.web.app/login)
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
